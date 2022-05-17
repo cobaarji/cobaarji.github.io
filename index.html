@@ -3,148 +3,77 @@
 
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-  <title>Happy Birthday</title>
+  <title>Home</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 
+
+  <style>
     html, body {
       height: 100%;
     }
 
     body {
-      display: flex;
       align-items: center;
     }
 
-    .hero {
+    .waktu {
       width: 100%;
-      max-width: 460px;
-      padding: 15px;
+      max-width: 330px;
       margin: auto;
-    }
-    .countdown {
-      margin-bottom: 40px;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
+      font-size: 50px;
+      color: white;
     }
 
-    @media only screen and (max-width: 1024px) {
-      .countdown {
-        justify-content: center;
-      }
+    .waktu p{
+      font-size: 20px;
     }
 
-    .countdown .time {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-    }
-
-    .countdown .time:not(:last-child) {
-      margin-right: 16px;
-    }
-
-    .countdown .time #days,
-    .countdown .time #hours,
-    .countdown .time #minutes,
-    .countdown .time #seconds,
-    .countdown .time .semicolon {
-      font-family: Samsung Sharp Sans;
-      font-style: normal;
-      font-weight: bold;
-      letter-spacing: 0.3px;
-    }
-
-    @media only screen and (min-width: 1024px) {
-
-      .countdown .time #days,
-      .countdown .time #hours,
-      .countdown .time #minutes,
-      .countdown .time #seconds,
-      .countdown .time .semicolon {
-        font-size: 72px;
-        line-height: 91px;
-      }
-    }
-
-    @media only screen and (max-width: 1024px) {
-
-      .countdown .time #days,
-      .countdown .time #hours,
-      .countdown .time #minutes,
-      .countdown .time #seconds,
-      .countdown .time .semicolon {
-        font-size: 40px;
-        line-height: 50px;
-        text-align: center;
-      }
-    }
-
-    .countdown .time span {
-      font-family: Samsung Sharp Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 30px;
-      line-height: 15px;
-      text-align: center;
-      letter-spacing: 0.3px;
-      align-self: center;
-    }
-
-    .countdown .semicolon {
-      margin-right: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      font-family: Samsung Sharp Sans;
-      font-style: normal;
-      font-weight: bold;
-      letter-spacing: 0.3px;
-    }
-
-    @media only screen and (min-width: 1024px) {
-      .countdown .semicolon {
-        font-size: 72px;
-        line-height: 91px;
-      }
-    }
-
-    @media only screen and (max-width: 1024px) {
-      .countdown .semicolon {
-        font-size: 40px;
-        line-height: 50px;
-        text-align: center;
-      }
+    .logo {
+      background-color: violet;
+      border-radius: 100%;
+      width: 470px;
+      height: 470px;
     }
   </style>
 </head>
 
 <body>
-  <div class="hero">
-    <div class="countdown fa-beat">
-      <div class="time">
-        <span id="days">00</span>
-        <span>Hari</span>
-      </div>
-      <div class="semicolon">:</div>
-      <div class="time">
-        <span id="hours">00</span>
-        <span>Jam</span>
-      </div>
-      <div class="semicolon">:</div>
-      <div class="time">
-        <span id="minutes">00</span>
-        <span>Menit</span>
-      </div>
-      <div class="semicolon">:</div>
-      <div class="time">
-        <span id="seconds">00</span>
-        <span>Detik</span>
-      </div>
+<br><br><br><br><br><br><br><br><br>
+  
+  <div class="container logo text-center fa-beat" style="--fa-animation-duration: 1s; --fa-beat-fade-opacity: 0.67; --fa-beat-scale: 1.08;">
+    
+    <span style="font-size: 200px; color: white;">
+      <i class="fa-solid fa-cake-candles"></i>  
+    </span>
+    
+    <div class="waktu d-flex justify-content-center">
+          
+          <div class="time">
+            <span id="hari">00</span>
+            <p>DD</p>
+          </div>
+          <div class="semicolon">:</div>
+          <div class="time">
+            <span id="jam">00</span>
+            <p>HH</p>
+          </div>
+          <div class="semicolon">:</div>
+          <div class="time">
+            <span id="menit">00</span>
+            <p>MM</p>
+          </div>
+          <div class="semicolon">:</div>
+          <div class="time">
+            <span id="detik">00</span>
+            <p>SS</p>
+          </div>
+
     </div>
+
   </div>
+
   <script>
     function getCounter() {
       var countDownDate = new Date("May 23, 2022 00:00:00").getTime();
@@ -155,22 +84,22 @@
         var distance = countDownDate - now;
         console.log(distance);
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor(
+        var hari = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var jam = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        var menit = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var detik = Math.floor((distance % (1000 * 60)) / 1000);
 
-        var textDays = document.getElementById("days");
-        var textHours = document.getElementById("hours");
-        var textMinutes = document.getElementById("minutes");
-        var textSeconds = document.getElementById("seconds");
+        var textHari = document.getElementById("hari");
+        var textJam = document.getElementById("jam");
+        var textMenit = document.getElementById("menit");
+        var textDetik = document.getElementById("detik");
 
-        textDays.innerHTML = days < 10 ? "0" + days : days;
-        textHours.innerHTML = hours < 10 ? "0" + hours : hours;
-        textMinutes.innerHTML = minutes < 10 ? "0" + minutes : minutes;
-        textSeconds.innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        textHari.innerHTML = hari < 10 ? "0" + hari : hari;
+        textJam.innerHTML = jam < 10 ? "0" + jam : jam;
+        textMenit.innerHTML = menit < 10 ? "0" + menit : menit;
+        textDetik.innerHTML = detik < 10 ? "0" + detik : detik;
 
         if (distance <= 1000) {
           window.location = "index.html";
