@@ -1,0 +1,16 @@
+body{
+  background-color: skyblue;
+  color: white;
+}
+
+span .countdown{
+  font-weight: bold;
+}
+
+/*
+hr{
+  border-color: white;
+  height: 5px;
+  background-color: white;
+}
+*/
