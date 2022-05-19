@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-  <title>Hi, Sayang!</title>
+  <title>Semarang, 23 Mei 2022</title>
 
   <!-- css -->
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,23 +12,17 @@
 
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  
   <style>
-    html, body {
-      height: 100%;
-    }
-
+    
     body {
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
+      position: relative;
+      top: 200px;
       background-color: violet;
     }
 
     .waktu {
-      width: 100%;
-      /*max-width: 330px;*/
-      margin: auto;
       font-size: 50px;
       color: violet;
     }
@@ -42,49 +36,54 @@
       border-radius: 100%;
       width: 470px;
       height: 470px;
+      /*box-shadow: 0px 0px 20px 20px white;*/
     }
 
   </style>
 </head>
 
 <body>
-<br><br><br><br><br><br><br><br><br>
   
   <div class="container logo text-center">
-    
+
+    <!-- logo kue -->
     <span style="font-size: 200px; color: violet;">
       <i class="fa-solid fa-cake-candles"></i>  
     </span>
     
+    <!-- countdown -->
     <div class="waktu d-flex justify-content-center">
-          
-          <div class="time">
-            <span id="hari">00</span>
-            <p>DD</p>
-          </div>
-          <div class="semicolon">:</div>
-          <div class="time">
-            <span id="jam">00</span>
-            <p>HH</p>
-          </div>
-          <div class="semicolon">:</div>
-          <div class="time">
-            <span id="menit">00</span>
-            <p>MM</p>
-          </div>
-          <div class="semicolon">:</div>
-          <div class="time">
-            <span id="detik">00</span>
-            <p>SS</p>
-          </div>
-
+      <div class="time">
+        <span id="hari">00</span>
+        <p>DD</p>
+      </div>
+      <div class="semicolon">:</div>
+      <div class="time">
+        <span id="jam">00</span>
+        <p>HH</p>
+      </div>
+      <div class="semicolon">:</div>
+      <div class="time">
+        <span id="menit">00</span>
+        <p>MM</p>
+      </div>
+      <div class="semicolon">:</div>
+      <div class="time">
+        <span id="detik">00</span>
+        <p>SS</p>
+      </div>
     </div>
 
   </div>
+  <p>
+    <div class="imge text-center">
+        
+    </div>
+  </p>
 
   <script>
     function getCounter() {
-      var countDownDate = new Date("May 23, 2022 00:00:00").getTime();
+      var countDownDate = new Date("May 19, 2022 14:36:20").getTime();
 
       var x = setInterval(function () {
         var now = new Date().getTime();
@@ -109,10 +108,14 @@
         textMenit.innerHTML = menit < 10 ? "0" + menit : menit;
         textDetik.innerHTML = detik < 10 ? "0" + detik : detik;
 
-        if (distance <= 500) {
+        if (distance <= 1000) {
           $(document).ready(function(){
               $(".time, .semicolon").remove();
-              $( ".waktu" ).html( "<button style='font-size: 20px; height: 60px; margin-top: 20px; background: violet; color: white; border: none; border-radius: 0px;'>Happy Birthday, Sayang!</button>" );
+              $( ".waktu" ).html( "<button id='hbd' style='font-size: 20px; height: 60px; margin-top: 20px; background: violet; color: white; border: none; border-radius: 10px;'>Klik disini!</button>");
+              $("#hbd").click(function(){
+                //$("#hbd").html("<span>Happy Birthday, Sayang!</span>");
+                window.location = "coba.html";
+              });
           });          
 
           //window.location = "index.html";
