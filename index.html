@@ -4,6 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
   <title>Semarang, 23 Mei 2022</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- css -->
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -37,10 +38,20 @@
       width: 470px;
       height: 470px;
     }
-    
+
     .kue {
       font-size: 200px;
       color: violet;
+    }
+
+    #hbd {
+        font-size: 20px; 
+        height: 60px; 
+        margin-top: 20px;
+        background: violet; 
+        color: white; 
+        border: none; 
+        border-radius: 10px;
     }
 
     @media only screen and (max-width: 600px) {
@@ -60,6 +71,16 @@
 
       .waktu p {
         font-size: 15px;
+      }
+
+      #hbd {
+        font-size: 18px; 
+        height: 50px; 
+        margin-top: 10px;
+        background: violet; 
+        color: white; 
+        border: none; 
+        border-radius: 10px;
       }
     }
   </style>
@@ -102,7 +123,7 @@
 
   <script>
     function getCounter() {
-      var countDownDate = new Date("May 23, 2022 00:00:00").getTime();
+      var countDownDate = new Date("May 22, 2022 15:29:50").getTime();
 
       var x = setInterval(function () {
         var now = new Date().getTime();
@@ -130,7 +151,7 @@
         if (distance <= 1000) {
           $(document).ready(function(){
               $(".time, .semicolon").remove();
-              $( ".waktu" ).html( "<button id='hbd' style='font-size: 20px; height: 60px; margin-top: 20px; background: violet; color: white; border: none; border-radius: 10px;'>Klik disini!</button>");
+              $( ".waktu" ).html( "<button id='hbd'>Klik disini!</button>");
               $("#hbd").hover(function(){
                 $("#hbd").html("<a href='https://www.canva.com/design/DAFBUC9H7jA/V0Kfd_xExoeYKCKlZnRbTw/view?utm_content=DAFBUC9H7jA&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu' download='Selamat ya.jpg' style='text-decoration: none; color: white;'><span>Happy Birthday, Sayang <i class='fa-solid fa-heart' style='font-size: 15px;'></i></span></a>");
               }, function(){
